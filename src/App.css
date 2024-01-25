@@ -1,110 +1,14 @@
-/* App.css */
-
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #1e1e1e; /* Dark background color */
-  color: #fff; /* Light text color */
+body.dark-mode {
+  background-color: #222 !important;
+  color: #fff !important;
 }
 
-.light-mode body {
-  background-color: #fff; /* Light background color in light mode */
-  color: #333; /* Dark text color in light mode */
+.todo-list.dark-mode {
+  background-color: #333 !important;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #333; /* Dark container background color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-}
-
-.light-mode .container {
-  background-color: #fff; /* Light container background color in light mode */
-  color: #333; /* Dark text color in light mode */
-}
-
-.header {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.task-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #444; /* Dark task item background color */
-  border: 1px solid #555;
-  border-radius: 4px;
-}
-
-.task-item:last-child {
-  margin-bottom: 0;
-}
-
-.task-title {
-  flex-grow: 1;
-  font-size: 16px;
-}
-
-.task-item.completed .task-title {
-  text-decoration: line-through;
-}
-.button {
-  background-color: #4caf50; /* Green button color */
-  color: #fff; /* White button text color */
-  border: none;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.button-secondary {
-  background-color: #ff9800; /* Orange button color */
-}
-
-/* Dark mode styles */
-.dark-mode .button {
-  background-color: #64b5f6; /* Blue button color in dark mode */
-}
-
-.dark-mode .button-secondary {
-  background-color: #ffeb3b; /* Yellow button color in dark mode */
-}
-
-/* Input styles */
-.input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background-color: #333; /* Dark input background color */
-  color: #fff; /* Light input text color */
-}
-
-.light-mode .input {
-  background-color: #fff; /* Light input background color in light mode */
-  color: #333; /* Dark input text color in light mode */
-}
-
-/* App.css */
-
-/* Other styles... */
-
-.task-item.completed {
-  text-decoration: line-through;
+.todo-item.dark-mode {
+  background-color: #444 !important;
+  color: #888 !important;
+  text-decoration: line-through !important;
 }

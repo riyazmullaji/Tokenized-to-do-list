@@ -1,5 +1,44 @@
 import React, { useState } from 'react';
-import TodoItem from './TodoItem'; // Ensure TodoItem is imported correctly
+import styled from 'styled-components'; // Import styled from styled-components
+import './App.css'; // Import the dark mode styles
+import TodoItem from './TodoItem';
+
+const TodoListContainer = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+`;
+
+
+const TodoListTitle = styled.h2`
+  color: #333;
+  text-align: center;
+`;
+
+const TodoForm = styled.form`
+  display: flex;
+  margin-top: 20px;
+
+  input {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+`;
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -21,8 +60,8 @@ function TodoList() {
   };
 
   return (
-    <div className="todo-list">
-      <h2>To-Do List</h2>
+    <TodoListContainer>
+      <TodoListTitle>To-Do List</TodoListTitle>
       <ul>
         {todos.map((todo, index) => (
           <TodoItem
@@ -33,16 +72,15 @@ function TodoList() {
           />
         ))}
       </ul>
-      {/* Ensure closing </ul> tag is present */}
-      <form onSubmit={(e) => {
+      <TodoForm onSubmit={(e) => {
         e.preventDefault();
         addTodo(e.target.elements.newTodo.value);
         e.target.elements.newTodo.value = "";
       }}>
         <input type="text" name="newTodo" placeholder="Add a new to-do" />
         <button type="submit">Add</button>
-      </form>
-    </div>
+      </TodoForm>
+    </TodoListContainer>
   );
 }
 
